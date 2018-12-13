@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PreExam.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PreExam.Data
+namespace PreExam.Models
 {
     public class AuctionDbContext : DbContext
     {
@@ -17,5 +16,8 @@ namespace PreExam.Data
         public DbSet<AuctionItem> AuctionItems { get; set; }
 
         public DbSet<Bid> Bids { get; set; }
+
+
+
     }
 }

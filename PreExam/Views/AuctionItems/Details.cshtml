@@ -1,0 +1,67 @@
+﻿@model PreExam.Models.AuctionItem
+
+@{
+    ViewData["Title"] = "Bid";
+}
+
+<h2>Make a bid!</h2>
+
+<div>
+    <form asp-action="Edit">
+        <h4>AuctionItem</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BidCustomName)
+            </dt>
+            <dd>
+                <input asp-for="BidCustomName" class="form-control" />
+                <span asp-validation-for="BidCustomName" class="text-danger"></span>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidCustomePhone)
+            </dt>
+            <dd>
+                <input asp-for="BidCustomePhone" class="form-control" />
+                <span asp-validation-for="BidCustomePhone" class="text-danger"></span>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidPrice)
+            </dt>
+            <dd>
+                <input asp-for="BidPrice" class="form-control" />
+                <span asp-validation-for="BidPrice" class="text-danger"></span>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemDescription)
+            </dt>
+            <dd>
+                <input asp-for="ItemDescription" class="form-control" readonly="readonly" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RatingPrice)
+            </dt>
+            <dd>
+                <input asp-for="RatingPrice" class="form-control" readonly="readonly" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemNumber)
+            </dt>
+            <dd>
+                <input asp-for="ItemNumber" class="form-control" readonly="readonly" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BidTimeStamp)
+            </dt>
+            <dd>
+                <input asp-for="BidTimeStamp" class="form-control" readonly="readonly" />
+            </dd>
+        </dl>
+        <div class="form-group">
+            <input type="submit" value="Submit my bid!" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-action="Index">Back to list of auction items!</a>
+</div>

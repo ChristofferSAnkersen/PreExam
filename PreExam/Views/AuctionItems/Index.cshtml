@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PreExam.Models.AuctionItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BidCustomName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BidCustomePhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BidPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RatingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BidTimeStamp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidCustomName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidCustomePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDescription)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.ItemNumber)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidTimeStamp)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ItemNumber">Select</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

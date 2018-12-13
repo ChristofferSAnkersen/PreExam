@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PreExam.Data;
+using PreExam.Models;
+using PreExam.Services;
 
 namespace PreExam
 {
@@ -35,6 +36,8 @@ namespace PreExam
 
             services.AddDbContext<AuctionDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient<AuctionProxy>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
